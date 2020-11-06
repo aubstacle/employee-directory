@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 class Table extends Component {
-  state = { employees: this.props };
+  state = { people: this.props };
 
   componentDidMount() {
     this.setState({
-      employees: this.props.table,
+      people: this.props.person,
     });
   }
 

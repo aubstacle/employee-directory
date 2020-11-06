@@ -4,7 +4,7 @@ import Table from "./Table"
 const Search = (props) => {
   return (
     <>
-      <form className="text-center" onSubmit={props.handleSubmit}>
+      <form className="text-center" onSubmit={props.handleSearch}>
         <input
           type="text"
           placeholder="search by first name"

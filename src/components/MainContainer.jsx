@@ -12,7 +12,6 @@ class MainContainer extends Component {
 
   handleInput = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
     this.setState({ [name]: value });
   };
 
@@ -34,7 +33,6 @@ class MainContainer extends Component {
     for (let i = 0; i < this.state.results.length; i++) {
       const firstName = this.state.results[i].name.first;
       if (firstName === searchValue) {
-        console.log(this.state.results[i]);
         res.push(this.state.results[i]);
       }
     }
@@ -42,12 +40,12 @@ class MainContainer extends Component {
   };
 
   handleSort = () => {
-    const ppl = this.state.results;
-    const arr = [];
-    for (let i = 0; i < ppl.length; i++) {
-      arr.push(ppl[i]);
+    const users = this.state.results;
+    const sortUsers = [];
+    for (let i = 0; i < users.length; i++) {
+      sortUsers.push(users[i]);
     }
-    arr.sort((a, b) => {
+    sortUsers.sort((a, b) => {
       if (a.name.first < b.name.first) {
         return -1;
       }
@@ -56,11 +54,10 @@ class MainContainer extends Component {
       }
       return 0;
     });
-    // console.log(arr);
-    this.setState({ searchResults: arr });
+    this.setState({ searchResults: sortUsers });
   };
 
-  handleHeaderClick = (e) => {
+  handleHeaderClick = () => {
     this.setState({ searchResults: this.state.results });
   };
 
@@ -72,7 +69,7 @@ class MainContainer extends Component {
           search={this.state.search}
           results={this.state.results}
           searchResults={this.state.searchResults}
-          handleSubmit={this.handleSubmit}
+          handleSearch={this.handleSearch}
           handleInput={this.handleInput}
           handleSort={this.handleSort}
         />
