@@ -1,0 +1,9 @@
+nav {
+    background: purple;
+    height: 4.5em;
+    color: white;
+    text-align: center;
+    display: flex;
+}
+
+
