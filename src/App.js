@@ -1,8 +1,11 @@
 import React from "react";
+import MainContainer from "./components/MainContainer"
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <MainContainer />
+    </div>
   );
 }
 
